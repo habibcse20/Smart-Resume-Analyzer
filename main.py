@@ -17,14 +17,14 @@ nltk.download("punkt")
 nltk.download('punkt_tab')
 nltk.download("stopwords")
 
-# ===================== PAGE CONFIG =====================
+#PAGE CONFIG =====================
 st.set_page_config(
     page_title="Smart Resume Analyzer",
     page_icon="📄",
     layout="wide"
 )
 
-# ===================== HEADER =====================
+#HEADER =====================
 st.markdown("""
 <h1 style='text-align:center;'>Smart Resume Analyzer</h1>
 <p style='text-align:center;color:gray;'>
@@ -33,7 +33,7 @@ Analyze your resume against any job description using AI & NLP
 <hr>
 """, unsafe_allow_html=True)
 
-# ===================== SIDEBAR =====================
+#SIDEBAR =====================
 with st.sidebar:
     st.header("⚙️ Settings")
     keyword_limit = st.slider("Top Keywords to Extract", 5, 30, 15)
@@ -46,7 +46,7 @@ with st.sidebar:
     - Resume Improvement Tips
     """)
 
-# ===================== HELPER FUNCTIONS =====================
+#HELPER FUNCTIONS =====================
 def extract_text_from_pdf(uploaded_file):
     pdf_reader = PyPDF2.PdfReader(uploaded_file)
     text = ""
@@ -79,7 +79,7 @@ def calculate_similarity(resume, job):
 def extract_keywords(tokens, limit):
     return Counter(tokens).most_common(limit)
 
-# ===================== MAIN APP =====================
+#MAIN APP =====================
 uploaded_file = st.file_uploader("📄 Upload Resume (PDF)", type=["pdf"])
 job_description = st.text_area("📝 Paste Job Description", height=200)
 
@@ -108,10 +108,10 @@ if st.button("🚀 Analyze Resume"):
         missing_skills = job_kw_set - resume_kw_set
         matched_skills = job_kw_set & resume_kw_set
 
-    # ===================== RESULT TABS =====================
+    #RESULT TABS =====================
     tab1, tab2, tab3 = st.tabs(["📊 Overview", "🔑 Keywords", "🛠 Suggestions"])
 
-    # ===================== OVERVIEW TAB =====================
+    #OVERVIEW TAB =====================
     with tab1:
         st.subheader("📊 ATS Match Score")
         st.progress(int(similarity_score))
@@ -130,7 +130,7 @@ if st.button("🚀 Analyze Resume"):
         ax.set_xlim(0, 100)
         st.pyplot(fig)
 
-    # ===================== KEYWORDS TAB =====================
+    #KEYWORDS TAB =====================
     with tab2:
         col1, col2 = st.columns(2)
 
@@ -148,7 +148,7 @@ if st.button("🚀 Analyze Resume"):
         st.subheader("❌ Missing Skills")
         st.error(", ".join(missing_skills) if missing_skills else "No missing skills 🎉")
 
-    # ===================== SUGGESTIONS TAB =====================
+    #SUGGESTIONS TAB =====================
     with tab3:
         st.subheader("🛠 Resume Improvement Suggestions")
 
@@ -167,13 +167,14 @@ if st.button("🚀 Analyze Resume"):
         - Quantify achievements with numbers
         """)
 
-# ===================== FOOTER =====================
+#FOOTER =====================
 st.markdown("""
 <hr>
 <p style='text-align:center;color:gray;'>
 Developed By Habibur Rahman | © 2024 All Rights Reserved
 </p>
              """, unsafe_allow_html=True)
+
 
 
 
