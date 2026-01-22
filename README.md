@@ -5,21 +5,21 @@ The system uses **Natural Language Processing (NLP)** techniques such as **TF-ID
 
 ---
 
-## 🚀 Features
+## Features
 
-- 📄 Upload resume in **PDF format**
-- 📝 Paste any **job description**
-- 📊 **ATS Match Score** using TF-IDF & Cosine Similarity
-- 🔑 **Keyword Extraction** from resume and job description
-- ✅ **Matched Skills Identification**
-- ❌ **Missing Skill / Skill Gap Analysis**
-- 📈 Visual score representation
-- 🛠 Resume improvement suggestions
-- 🎨 Clean and user-friendly Streamlit UI
+- Upload resume in **PDF format**
+- Paste any **job description**
+- **ATS Match Score** using TF-IDF & Cosine Similarity
+- **Keyword Extraction** from resume and job description
+- **Matched Skills Identification**
+- **Missing Skill / Skill Gap Analysis**
+- Visual score representation
+- Resume improvement suggestions
+- Clean and user-friendly Streamlit UI
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 1. Resume PDF text is extracted using **PyPDF2**
 2. Text is cleaned and preprocessed using **NLTK**
@@ -30,7 +30,7 @@ The system uses **Natural Language Processing (NLP)** techniques such as **TF-ID
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - **Python**
 - **Streamlit**
@@ -39,7 +39,6 @@ The system uses **Natural Language Processing (NLP)** techniques such as **TF-ID
 - **PyPDF2**
 - **Matplotlib**
 
----
 
-## 📂 Project Structure
+
 
